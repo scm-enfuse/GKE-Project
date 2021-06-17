@@ -104,7 +104,8 @@ Deploy the workload to kubernetes.
 ```
 kubectl apply -f serv/deployment.yaml
 ```
-![Workload](https://github.com/scm-enfuse/GKE-Project/blob/master/images/cluster.png/workload.png)
+![Workload](https://github.com/scm-enfuse/GKE-Project/blob/master/images/workload.png)
+
 
 Now it's time to create our service.
 To expose the service to the cluster only, we need to label the service as type `ClusterIP`.
@@ -128,7 +129,7 @@ spec:
 The service will be granted its unique ClusterIP address and exposes the service on port 80 to any workload in the cluster with the blog label.
 Apply the service.
 ```
-g
+kubectl apply -f serv/service.yaml
 ```
 Check to see if the service configuration was successfull.
 ```
