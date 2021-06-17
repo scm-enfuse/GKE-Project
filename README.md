@@ -23,7 +23,7 @@ gcloud container clusters create blog-cluster \
 ```
 On the Google Cloud Console under the Kubernetes tab, you should see something like the following:
 
-![Cluster](/Users/shaunmiller/GKE-Efuse-Blog/images/cluster.png)
+![Cluster](https://github.com/scm-enfuse/GKE-Project/blob/master/images/cluster.png)
 
 After creating the cluster, configure Kubectl.
 
@@ -62,7 +62,7 @@ Our `serv` container should be there.
 Click on the latest pushed image.
 You should see something like the following.
 
-![Cloud Run](/Users/shaunmiller/GKE-Efuse-Blog/images/run.png)
+![Cloud Run](https://github.com/scm-enfuse/GKE-Project/blob/master/images/run.png)
 
 Click on `Deploy` and select `Deploy to Cloud Run`.
 You will then be prompted to create the service.
@@ -104,7 +104,7 @@ Deploy the workload to kubernetes.
 ```
 kubectl apply -f serv/deployment.yaml
 ```
-![Cloud Run](/Users/shaunmiller/GKE-Efuse-Blog/images/workload.png)
+![Workload](https://github.com/scm-enfuse/GKE-Project/blob/master/images/cluster.png/workload.png)
 
 Now it's time to create our service.
 To expose the service to the cluster only, we need to label the service as type `ClusterIP`.
