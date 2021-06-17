@@ -1,0 +1,26 @@
+# This file configures the stock app which serves public web traffic.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: display-app002
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blog
+  template:
+    metadata:
+      labels:
+        app: blog
+    spec:
+      containers:
+      - name: display
+        # Replace $GCLOUD_PROJECT with your project ID
+        image: gcr.io/hitmonlee/display:latest
+        # This app listens on port 8080 for web traffic by default.
+        ports:
+        - containerPort: 8000
+        env:
+          - name: PORT
+            value: "8000"
+                 

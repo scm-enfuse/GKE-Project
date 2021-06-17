@@ -1,0 +1,16 @@
+
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: serv-service000
+  labels:
+    app: blog
+spec:
+  type: ClusterIP
+  selector:
+    app: blog
+  ports:
+  - port: 80 # any port other pods use to access the Service
+    targetPort: 7000 # the port the container accepts traffic on (default is 8080)

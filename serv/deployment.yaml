@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: serv-app.0.0.2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blog
+  template:
+    metadata:
+      labels:
+        app: blog
+    spec:
+      containers:
+      - name: serv
+        # Replace $GCLOUD_PROJECT with your project ID
+        image: gcr.io/hitmonlee/serv:latest
+        # This app listens on port 8080 for web traffic by default.
+        ports:
+        - containerPort: 7000
+        env:
+          - name: PORT
+            value: "7000"
